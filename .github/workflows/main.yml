@@ -10,15 +10,14 @@ on:
 
 jobs:
   build:
-    name: Upload Release Asset
     runs-on: ubuntu-latest
+    name: Upload Release Asset
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-
+        uses: actions/checkout@master
       - name: Github Release
-        uses: elgohr/Github-Release-Action@v3.1
+        uses: elgohr/Github-Release-Action@master
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         with:
-          release: 'release-1'
+          args: 'release-1'
