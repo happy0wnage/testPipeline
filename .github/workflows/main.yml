@@ -17,7 +17,5 @@ jobs:
         uses: actions/checkout@master
       - name: Github Release
         uses: elgohr/Github-Release-Action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         with:
           args: 'release-1'
