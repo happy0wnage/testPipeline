@@ -15,7 +15,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v1
-        token: "${{ secrets.RELEASE_TOKEN }}"
+          with:
+            token: "${{ secrets.RELEASE_TOKEN }}"
 
       - uses: marvinpinto/action-automatic-releases@latest
           with:
