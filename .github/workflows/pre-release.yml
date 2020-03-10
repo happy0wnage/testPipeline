@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+name: "release"
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches:
+      - 'master*'
+
+jobs:
+  pre-release:
+
+    runs-on: ubuntu-latest
+    name: Pre release
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+      - uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.RELEASE_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            mgf/src/main/java/com/blackstar/utils/Version.java
+        id: "automatic_releases"
