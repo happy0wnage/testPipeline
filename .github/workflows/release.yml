@@ -5,8 +5,8 @@ name: "release"
 # events but only for the master branch
 on:
   push:
-    branches: 
-      - 'release*'
+    tags:
+      - 'v*'
 
 jobs:
   tagged-release:
