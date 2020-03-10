@@ -29,5 +29,5 @@ jobs:
           prerelease: true
           title: "Development Build"
           files: |
-            mgf/src/main/java/com/blackstar/utils/Version.java
+            build/libbs/mgf.war
         id: "automatic_releases"
