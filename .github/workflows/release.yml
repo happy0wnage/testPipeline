@@ -27,5 +27,5 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
           files: |
-            build/libbs/mgf.war
+            build/libs/mgf.war
         id: "automatic_releases"

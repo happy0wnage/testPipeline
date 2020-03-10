@@ -29,5 +29,5 @@ jobs:
           prerelease: true
           title: "Development Build"
           files: |
-            build/libbs/mgf.war
+            build/libs/mgf.war
         id: "automatic_releases"
