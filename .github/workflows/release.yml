@@ -1,24 +1,21 @@
-# This is a basic workflow to help you get started with Actions
 name: "release"
 
-# Controls when the action will run. Triggers the workflow on push or pull request 
-# events but only for the master branch
 on:
   push:
     tags:
-      - 'v*'
+      - '*'
 
 jobs:
   tagged-release:
 
     runs-on: ubuntu-latest
-    name: Upload Release Asset
+    name: "Create release"
 
     steps:
-      - name: Checkout code
+      - name: "Checkout code"
         uses: actions/checkout@v1
 
-      - name: "Build & test"
+      - name: "Build"
         run: |
           ./gradlew war
 
@@ -28,4 +25,3 @@ jobs:
           prerelease: false
           files: |
             build/libs/mgf.war
-        id: "automatic_releases"
