@@ -1,0 +1,11 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+war {
+    archiveName = 'mgf.war'
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8

@@ -18,6 +18,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v1
 
+      - name: "Build & test"
+        run: |
+          ./gradlew war
+
       - uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
