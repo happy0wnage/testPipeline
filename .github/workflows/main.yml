@@ -9,19 +9,21 @@ on:
       - 'release*'
 
 jobs:
-  build:
+  tagged-release:
+
     runs-on: ubuntu-latest
     name: Upload Release Asset
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v1
-          with:
-            token: "${{ secrets.RELEASE_TOKEN }}"
+        with:
+          token: "${{ secrets.RELEASE_TOKEN }}"
 
       - uses: marvinpinto/action-automatic-releases@latest
-          with:
-            repo_token: "${{ secrets.RELEASE_TOKEN }}"
-            prerelease: false
-            files: |
-              mgf/src/main/java/com/blackstar/utils/Version.java
-          id: "automatic_releases"
+        with:
+          repo_token: "${{ secrets.RELEASE_TOKEN }}"
+          prerelease: false
+          files: |
+            mgf/src/main/java/com/blackstar/utils/Version.java
+        id: "automatic_releases"
