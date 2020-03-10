@@ -1,5 +1,5 @@
 package com.blackstar.utils;
 
 public class Version {
-    public static final String APPLICATION_VERSION = "2.1.17";
+    public static final String APPLICATION_VERSION = "2.1.18";
 }
